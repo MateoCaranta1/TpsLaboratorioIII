@@ -9,7 +9,6 @@ const Tablex = ({ netIncomes }) => {
     return (
         <>
             <h1>RESULTADOS</h1>
-            <hr></hr>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -25,10 +24,8 @@ const Tablex = ({ netIncomes }) => {
                         </tr>
                     ))}
                 </tbody>
-                <hr></hr>
-                <p className='bg-success text-light'>Promedio de ingreso neto: {average.toFixed(2)}</p>
-                <hr></hr>
             </Table>
+            <p className='bg-success text-light'>Promedio de ingreso neto: {average.toFixed(2)}</p>
         </>
     );
 }
