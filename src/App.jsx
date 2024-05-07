@@ -1,10 +1,11 @@
 import './App.css'
-import Login from './components/login/Login'
+import List from './components/list/List'
 
 function App() {
+
   return (
     <>
-      <Login/>
+      <List />
     </>
   )
 }
