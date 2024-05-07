@@ -3,7 +3,6 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const NewTask = ({ onHandleNewTask }) => {
     const [newTask, setNewTask] = useState("");
-
     const [show, setShow] = useState(false);
 
     const handleNewTask = (event) => {
@@ -12,6 +11,10 @@ const NewTask = ({ onHandleNewTask }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(newTask.trim() === "")
+        {
+            return;
+        }
         const taskData = {
             task: newTask
         };
@@ -19,6 +22,7 @@ const NewTask = ({ onHandleNewTask }) => {
         onHandleNewTask(taskData);
 
         setNewTask("");
+        
     }
 
     const handleClick = () => {
