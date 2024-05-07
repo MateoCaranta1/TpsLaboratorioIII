@@ -11,7 +11,7 @@ const NewTask = ({ onHandleNewTask }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (newTask.event.target.value === "") {
+        if (newTask.trim() === "") {
             return;
         }
         const taskData = {
