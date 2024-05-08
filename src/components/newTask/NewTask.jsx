@@ -11,7 +11,8 @@ const NewTask = ({ onHandleNewTask }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (newTask.trim() === "") {
+        if (newTask === "") {
+            alert ("Ingrese una tarea...");
             return;
         }
         const taskData = {
