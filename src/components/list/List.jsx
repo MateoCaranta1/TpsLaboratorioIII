@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { Form, ListGroup, Button } from 'react-bootstrap';
+import { Form, ListGroup } from 'react-bootstrap';
 import NewTask from '../newTask/NewTask';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const List = () => {
-    const list = [
-        { id: 1, task: "Ordenar la casa.", done: false },
-        { id: 2, task: "Sacar la basura.", done: false },
-        { id: 3, task: "Terminar el script.", done: false },
-        { id: 4, task: "Subir los cambios a GitHub.", done: false },
-    ];
+    const list = [];
 
     const [tasks, setTasks] = useState(list);
 
@@ -41,13 +37,19 @@ const List = () => {
             <ListGroup>
                 {tasks.map((task) => (
                     <ListGroup.Item key={task.id} variant={task.done ? 'success' : 'danger'}>
-                        <Form.Check
-                            type="checkbox"
-                            label={task.task}
-                            checked={task.done}
-                            onChange={() => handleDone(task.id)}
-                        />
-                        <Button variant="danger" onClick={() => handleDelete(task.id)}>Eliminar tarea</Button>
+                        <div className="d-flex justify-content-between align-items-center">
+                            <div>
+                                <Form.Check
+                                    type="checkbox"
+                                    label={task.task}
+                                    checked={task.done}
+                                    onChange={() => handleDone(task.id)}
+                                />
+                            </div>
+                            <div>
+                                <i className="bi bi-trash" pointer = 'cursor' onClick={() => handleDelete(task.id)}></i> 
+                            </div>
+                        </div>
                     </ListGroup.Item>
                 ))}
             </ListGroup>

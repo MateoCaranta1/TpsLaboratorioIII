@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
+import './NewTask.css';
 
 const NewTask = ({ onHandleNewTask }) => {
     const [newTask, setNewTask] = useState("");
@@ -31,11 +32,11 @@ const NewTask = ({ onHandleNewTask }) => {
 
     return (
         <div>
-            <Button onClick={handleClick}>
+            <Button onClick={handleClick} className='m-2'>
                 {show ? "Esconder" : "Agregar tarea"}
             </Button>
             {show && (
-                <Form className='text-white bg-secondary' onSubmit={handleSubmit}>
+                <Form className='text-white bg-secondary p-2' onSubmit={handleSubmit}  style={{ borderRadius: '10px' }}>
                     <Row className="mb-3">
                         <Col md={8}>
                             <Form.Group controlId="newTask">
@@ -51,7 +52,7 @@ const NewTask = ({ onHandleNewTask }) => {
                     </Row>
                     <Row className="justify-content-end">
                         <Col md={3} className="d-flex justify-content-end">
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" className='addButton'>
                                 Agregar tarea
                             </Button>
                         </Col>
